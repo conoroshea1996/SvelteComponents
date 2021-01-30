@@ -1,5 +1,6 @@
 {
   "imports": {
+    "autocompleter": "./autocompleter.js",
     "svelte-spa-router": "./svelte-spa-router.js",
     "svelte-spa-router/active": "./svelte-spa-router/active.js",
     "svelte/internal": "./svelte/internal.js",
