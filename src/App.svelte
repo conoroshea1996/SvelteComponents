@@ -3,12 +3,17 @@
 
   import Router from "svelte-spa-router";
   import active from "svelte-spa-router/active";
+  import { link } from "svelte-spa-router";
 
   import { routes } from "./routes";
   const components = [
     {
       ComponentName: "Modal",
       Route: "/",
+    },
+    {
+      ComponentName: "AutoComplete",
+      Route: "/AutoComplete",
     },
   ];
 </script>
@@ -30,10 +35,10 @@
           <nav class="flex-1 bg-white space-y-1" aria-label="Sidebar">
             {#each components as component}
               <a
-                use:active={{ className: "bg-purple-400 border-purple-600" }}
+                use:active={{ className: " border-purple-600" }}
                 href={component.Route}
-                class="border-transparent text-white group flex items-center px-3 py-2 text-sm font-medium border-l-4"
-              >
+                use:link
+                class="border-transparent bg-purple-400 text-white group flex items-center px-3 py-2 text-sm font-medium border-l-4">
                 <svg
                   class="text-white 0 mr-3 h-6 w-6"
                   x-description="Heroicon name: folder"
@@ -41,8 +46,7 @@
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  aria-hidden="true"
-                >
+                  aria-hidden="true">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
